@@ -82,7 +82,7 @@
     </target>
 
 	
-    <target name="go" depends="install-ivy, generate-src, resolve"
+    <target name="go" depends="install-ivy, resolve"
             description="--> resolve dependencies, compile and run the project">
 		<echo message="using ivy to resolve commons-lang 2.1..."/>
         <!-- here comes the magic line: asks ivy to resolve a dependency on 
