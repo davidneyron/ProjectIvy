@@ -100,6 +100,11 @@ Let's go!
 		</echo>
     </target>
 
+    <target name="report" depends="go">
+
+            <ivy:report todir = "report"/>
+    </target>
+
     <target name="run" depends="go">
 	<java classname="example.Hello">
             <classpath>

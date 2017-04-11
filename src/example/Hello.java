@@ -21,7 +21,7 @@ public class Hello {
         			
         			System.out.println(Arrays.toString(s));
 					for(String nb : s){
-						System.out.println("Nombre lu : "+ nb);
+						//System.out.println("Nombre lu : "+ nb);
                 		monmax = max(monmax, Integer.parseInt(nb));
 					}
         		}
