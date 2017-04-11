@@ -1,14 +1,9 @@
 
 package example;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.FileNotFoundException;
-import org.apache.commons.lang.WordUtils;
+import java.io.*;
+import java.util.*;
 import com.opencsv.*;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Collections;
 
 public class Hello {
     public static void main(String[] args) {
@@ -21,9 +16,17 @@ public class Hello {
         	CSVReader reader =  new CSVReader(new FileReader("data.csv"));
         	try {
         		List<String[]> myEntries = reader.readAll();
-        		for (String[] strings : myEntries) {
+        		for (String[] s : myEntries) {
+        			
         			System.out.println(Arrays.toString(strings));
+				for(String nb : s){
+					System.out.println("Nombre lu : "+ nb);
+                			monmax = max(monmax, Integer.parseInt(nb));
+
+				}
         		}
+        		System.out.println("Mon max : " + monmax);
+        		
         	}
         	catch (IOException e) {
         		System.out.println("standard message: IOE");
@@ -32,5 +35,11 @@ public class Hello {
         catch(FileNotFoundException e) {
         	System.out.println("standard message: FNFE");
         }
+    }
+
+    public static int max(int a, int b)
+    {
+    	return a > b ? a : b;
+    	//return a; //le stagiaire est par la
     }
 }
